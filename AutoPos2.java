@@ -93,7 +93,7 @@ public class AutoPos2 extends LinearOpMode {
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // Subir el brazo y terminar de acercarse a la fuente de chocolate
                 while (runtime.time() < 1.2 && opModeIsActive()){
                     motor_brazo.setPower(0.7);
@@ -102,7 +102,7 @@ public class AutoPos2 extends LinearOpMode {
                 RobotMove(0,0);
                 motor_brazo.setPower(0);
                 runtime.reset();
-                
+
                 // Sacar el objetivo del intake
                 while (runtime.time() < 1  && opModeIsActive()){
                     motorB.setPower(0.7);
@@ -124,14 +124,21 @@ public class AutoPos2 extends LinearOpMode {
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
+                // INTEGRACION DE ULTIMO MINUTO: MOVER BRAZO PARA ABAJO
+                while (runtime.time() < 0.8 && opModeIsActive()){
+                    motor_brazo.setPower(-0.7);
+                }
+                motor_brazo.setPower(0);
+                runtime.reset();
+
                 // Avanzar hasta chocar con el borde y estacionar el coche
                 while (runtime.time() < 1.90 && opModeIsActive()){
                     RobotMove(0.7,0);
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // NO TOQUES ESTO
                 isFinished = true;
 
