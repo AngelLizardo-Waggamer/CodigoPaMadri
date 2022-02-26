@@ -31,6 +31,8 @@ RobotMove(0,1);
 ```
 Pueden combinarse, pero no resulta tan efectivo como si se separara.
 
+---
+
 Para el movimiento del brazo (usando valores de máxima potencia), las líneas de código se verían así:
 ```java
 // Subir el brazo
