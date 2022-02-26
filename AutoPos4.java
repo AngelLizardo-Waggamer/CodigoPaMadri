@@ -110,6 +110,7 @@ public class AutoPos4 extends LinearOpMode {
                 runtime.reset();
 
                 // Dar vuelta para dirigirse al warehouse
+                /*
                 while (runtime.time() < 0.8 && opModeIsActive()){
                     RobotMove(0,-0.5);
                 }
@@ -143,7 +144,9 @@ public class AutoPos4 extends LinearOpMode {
                 }
                 RobotMove(0,0);
                 runtime.reset();
-*/
+
+                 */
+
                 // NO TOQUES ESTO
                 isFinished = true;
 
