@@ -85,14 +85,14 @@ public class AutoPos3 extends LinearOpMode {
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // Vuelta hacia la fuente de cocholate
                 while ( runtime.time() < 0.65 && opModeIsActive() )  {
                     RobotMove(0,-1);
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // Subir el brazo y acercarse a la fuente de cocholate
                 while (runtime.time() < 1.2 && opModeIsActive()){
                     motor_brazo.setPower(0.7);
@@ -101,14 +101,16 @@ public class AutoPos3 extends LinearOpMode {
                 RobotMove(0,0);
                 motor_brazo.setPower(0);
                 runtime.reset();
-                
+
                 // Sacar el objetivo del intake
                 while (runtime.time() < 1  && opModeIsActive()){
                     motorB.setPower(0.7);
                 }
                 motorB.setPower(0);
+                motor_brazo.setPower(0);
                 runtime.reset();
 
+                /*
                 // Retroceder de la fuente de cocholate
                 while (runtime.time() < 0.2 && opModeIsActive()){
                     RobotMove(-0.5,0);
@@ -116,20 +118,22 @@ public class AutoPos3 extends LinearOpMode {
                 RobotMove(0,0);
                 runtime.reset();
 
-                // Dar la vuelta para estacionarse 
+                // Dar la vuelta para estacionarse
+                /*
                 while (runtime.time() < 0.45 && opModeIsActive()){
                     RobotMove(0,-0.5);
                 }
                 RobotMove(0,0);
                 runtime.reset();
 
-                // Avance para estacionado
+                // Avanzar hasta chocar con el borde y que el carro quede estacionado
                 while (runtime.time() < 3 && opModeIsActive()){
                     RobotMove(-1,0);
                 }
                 RobotMove(0,0);
                 runtime.reset();
 
+                 */
                 // NO TOQUES ESTO
                 isFinished = true;
 
