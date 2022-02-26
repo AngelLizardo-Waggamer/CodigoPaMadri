@@ -65,15 +65,14 @@ public class AutoPos1 extends LinearOpMode {
 
 
                 Donde oT es objective Time (osea, el tiempo de ejecucion del código dentro del while, en milisegundos)
-                fw es la potencia de los motores de chasis para acelerar adelante o atrás (positivo o negativo respectivamente)
-                turn es la potencia de giro de los motores del chasis (derecha positivo e izquierda negativo)
+                fw es la potencia de los motores de chasis para acelerar adelante o atrás
+                turn es la potencia de giro de los motores del chasis
                 pM es la potencia del motor del que se haga referencia.
+                TODAS LAS POTENCIAS SON DE -1 a 1
 
                 La última parte del código (últimas 3 líneas) son necesarias para cersiorarse que algún motor
                 no vaya a tener un movimiento indeseado después de que se ejecute otro while. El indispensable
                 es runtime.reset();
-
-                TODAS LAS POTENCIAS SON DE -1 a 1
 
                 Y POR LO QUE MAS QUIERAS NO BORRES EL isFinished = true; pq si no el código se va a repetir
                 infinitamente por los 30s :)
