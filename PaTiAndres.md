@@ -92,3 +92,6 @@ runtime.reset();
 
 **NOTA:** AutoPos3 y AutoPos4 son espejo pero no funcionaban en las prácticas porque las medidas 
 taban culeras. AutoPos4 tiene comentado el código que AutoPos3 tiene al final.
+
+## Para el proyecto
+https://github.com/FIRST-Tech-Challenge/FtcRobotController/releases/tag/v7.1
