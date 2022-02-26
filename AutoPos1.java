@@ -65,14 +65,15 @@ public class AutoPos1 extends LinearOpMode {
 
 
                 Donde oT es objective Time (osea, el tiempo de ejecucion del código dentro del while, en milisegundos)
-                fw es la potencia de los motores de chasis para acelerar adelante o atrás
-                turn es la potencia de giro de los motores del chasis
+                fw es la potencia de los motores de chasis para acelerar adelante o atrás (positivo o negativo respectivamente)
+                turn es la potencia de giro de los motores del chasis (derecha positivo e izquierda negativo)
                 pM es la potencia del motor del que se haga referencia.
-                TODAS LAS POTENCIAS SON DE -1 a 1
 
                 La última parte del código (últimas 3 líneas) son necesarias para cersiorarse que algún motor
                 no vaya a tener un movimiento indeseado después de que se ejecute otro while. El indispensable
                 es runtime.reset();
+
+                TODAS LAS POTENCIAS SON DE -1 a 1
 
                 Y POR LO QUE MAS QUIERAS NO BORRES EL isFinished = true; pq si no el código se va a repetir
                 infinitamente por los 30s :)
@@ -91,7 +92,7 @@ public class AutoPos1 extends LinearOpMode {
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // Subir el brazo y avanzar hacia la fuente de cocholate
                 while (runtime.time() < 1.2 && opModeIsActive()){
                     motor_brazo.setPower(0.7);
@@ -100,8 +101,8 @@ public class AutoPos1 extends LinearOpMode {
                 RobotMove(0,0);
                 motor_brazo.setPower(0);
                 runtime.reset();
-                
-                // Sacar Objetivo
+
+                // Sacar Objetivo del intake
                 while (runtime.time() < 1  && opModeIsActive()){
                    motorB.setPower(0.7);
                 }
@@ -123,13 +124,20 @@ public class AutoPos1 extends LinearOpMode {
                 RobotMove(0,0);
                 runtime.reset();
 
+                // INTEGRACION DE ULTIMO MINUTO: MOVER BRAZO PARA ABAJO
+                while (runtime.time() < 0.8 && opModeIsActive()){
+                    motor_brazo.setPower(-0.7);
+                }
+                motor_brazo.setPower(0);
+                runtime.reset();
+
                 // Avanzar hasta chocar con el borde para estacionarse
                 while (runtime.time() < 1.90 && opModeIsActive()){
                     RobotMove(0.7,0);
                 }
                 RobotMove(0,0);
                 runtime.reset();
-                
+
                 // NO LO TOQUES :)
                 isFinished = true;
 
